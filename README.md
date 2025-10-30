@@ -71,3 +71,31 @@ pet-mini/
     └── workflows/
         └── smoke.yml
 ```
+
+## Dataset Description
+
+The dataset is known as the **Monash vis‑fPET‑fMRI Dataset (OpenNeuro accession ds003382)** and contains simultaneous functional PET and fMRI brain data from healthy human subjects.
+
+#### Key attributes
+
+**Subjects:** Subjects: 10 healthy adults (age range ~18-49, mean ~29 yrs) were scanned. 
+
+**Acquisitions:** Participants underwent simultaneous BOLD-fMRI and dynamic PET with [^18F]-FDG radiotracer under a visual stimulation paradigm (checkerboard task) plus resting periods.
+
+**PET data:** The dataset includes list-mode PET raw data, sinograms, and reconstructed dynamic PET images.
+
+**fMRI & anatomical MRI:** Standard structural T1, field maps, and functional EPI scans are included.
+
+**Format and metadata:** Data has been organized in a Brain Imaging Data Structure (BIDS)-like format, with sidecar JSON files, metadata, and a participants table.
+
+
+It contains dynamic PET data with many individual time frames rather than just a single static image, which aligns smoothly with your pipeline’s steps of TAC extraction, kinetic modeling, and parametric mapping. The dataset spans an entire brain field of view—not just a small organ region—making it ideal for voxel-wise modeling and whole-volume analysis. It also offers both raw/list-mode and reconstructed data, giving you flexibility to simulate, reconstruct, benchmark, or compare methods. By leveraging this existing open dataset, you gain a real-data reference to compare your simulated results against, which is extremely helpful for demonstrating the validity and robustness of your pipeline.
+
+
+#### Limitations/Considerations
+
+Although dynamic, the field of view is still limited to the brain rather than full-body total-body PET, so if your project is aiming for whole-body simulation and modeling, you will need to simulate extra anatomy/organs beyond this dataset.
+
+The list-mode data, sinograms, and reconstruction pipelines may require specific tools like STIR and SIRF, or compatibility; you must check the formats before using them.
+
+The “whole body” aspect in your project requires additional modeling beyond what the brain dataset provides.
