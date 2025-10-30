@@ -1,11 +1,4 @@
 #!/usr/bin/env python3
-"""
-Extract TACs (time-activity curves) from a dynamic PET 4D NIfTI using PET-BIDS JSON.
-- Loads *_pet.nii.gz and sidecar *_pet.json (FrameTimesStart, FrameDuration).
-- Builds a simple brain mask from temporal mean (percentile threshold + morphology).
-- Defines a small high-uptake ROI from early frames as a crude IDIF proxy (demo only).
-- Saves: results/tac_brain.csv and results/tac_idif.csv with columns [time_mid_s, value].
-"""
 import os, json, argparse
 import numpy as np
 import nibabel as nib
@@ -35,7 +28,6 @@ def load_pet_json(json_path):
     return t0, dt, t_mid, meta
 
 def build_brain_mask(pet4d, p=70):
-    """Simple mask from temporal-mean using a relaxed percentile threshold."""
     mean_img = pet4d.mean(axis=3)
     positive = mean_img[mean_img > 0]
     if positive.size == 0:
@@ -48,7 +40,6 @@ def build_brain_mask(pet4d, p=70):
     return mask
 
 def top_percent_roi(pet4d, t_frames=(0, 3), top_p=0.5):
-    """High-uptake tiny ROI from early frames as crude IDIF proxy (demo only)."""
     t0, t1 = t_frames
     t1 = min(t1, pet4d.shape[-1]-1)
     early = pet4d[..., t0:t1+1].mean(axis=3)
