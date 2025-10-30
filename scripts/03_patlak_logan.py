@@ -1,8 +1,4 @@
 #!/usr/bin/env python3
-"""
-Patlak & Logan fits for a single TAC (ROI) with stability options.
-Saves patlak<tag>.png, logan<tag>.png and optionally appends metrics to CSV.
-"""
 import os, argparse
 import numpy as np
 import pandas as pd
