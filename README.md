@@ -99,3 +99,33 @@ Although dynamic, the field of view is still limited to the brain rather than fu
 The list-mode data, sinograms, and reconstruction pipelines may require specific tools like STIR and SIRF, or compatibility; you must check the formats before using them.
 
 The “whole body” aspect in your project requires additional modeling beyond what the brain dataset provides.
+
+# Steps to run the pipeline
+
+1- Place the script above in your root folder, name it run_pipeline.sh
+
+2- Make it executable:
+```python
+chmod +x run_pipeline.sh
+```
+
+3- Ensure your virtual environment exists (e.g., .venv) and you have env/requirements.txt.
+
+4- Run it:
+
+```python
+./run_pipeline.sh
+```
+
+5- At the end, inspect:
+
+```python
+results/roi_fits_sim/roi_params_summary.csv
+
+results/paramaps_sim/Ki_map.nii.gz, VT_map.nii.gz
+
+results/figures_sim/ for PNGs
+
+results/report_sim.md for the markdown report
+```
+
