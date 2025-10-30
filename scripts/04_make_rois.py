@@ -1,8 +1,4 @@
 #!/usr/bin/env python3
-"""
-Make simple PET ROIs on a 4D PET (mini) for downstream kinetic modelling.
-Outputs NIfTI masks under results/rois/: brain, high, center, low.
-"""
 import os, argparse
 import numpy as np
 import nibabel as nib
