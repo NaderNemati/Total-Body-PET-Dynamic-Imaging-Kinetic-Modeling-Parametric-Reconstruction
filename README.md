@@ -23,7 +23,6 @@ In this mini-project, you are building a pipeline from simulation → reconstruc
 
 Sun, Y., et al. Performance and application of the total-body PET/CT scanner: a literature review. [Open Access](https://ejnmmires.springeropen.com/articles/10.1186/s13550-023-01059-1?utm_source=chatgpt.com)
 
-[Bonawitz et al. (2017). "Practical Secure Aggregation for Privacy-Preserving Machine Learning"](https://dl.acm.org/doi/10.1145/3133956.3133982)
 
 
-Sun, T., et al. Current progress and future perspectives in total‐body PET imaging, part I: Data processing and analysis. [Open Access]([https://ejnmmires.springeropen.com/articles/10.1186/s13550-023-01059-1?utm_source=chatgpt.com](https://onlinelibrary.wiley.com/doi/epdf/10.1002/ird3.66)
+Sun, T., et al. Current progress and future perspectives in total‐body PET imaging, part I: Data processing and analysis. [Open Access](https://onlinelibrary.wiley.com/doi/epdf/10.1002/ird3.66)
