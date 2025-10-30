@@ -1,14 +1,8 @@
 #!/usr/bin/env python3
 """
-Fit multiple ROIs end-to-end with stable options:
-- Extract ROI TACs
-- Run 1-Tissue fit (tagged outputs + metrics CSV)
-- Run Patlak & Logan with late-frames, normalization, and Ct thresholds
-- Produce a final merged summary CSV of all ROI kinetics
-
-Outputs (under --outdir):
-  tac_<roi>.csv
-  fit_1t_<roi>.png, patlak_<roi>.png, logan_<roi>.png
+Outputs under --outdir:
+  tac_(...).csv
+  fit_1t_(...).png, patlak_(...).png, logan_(...).png
   roi_1t_metrics.csv, roi_pl_metrics.csv, roi_params_summary.csv
   summary.txt (stdout/stderr logs)
 """
