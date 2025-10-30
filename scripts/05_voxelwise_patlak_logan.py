@@ -1,11 +1,5 @@
 #!/usr/bin/env python3
 """
-Voxelwise Patlak (Ki) and Logan (VT) maps with stability controls:
-- Late-frame selection for Patlak/Logan
-- Normalization to prevent overflow
-- Frame-wise and voxel-wise Ct thresholds to avoid division by ~0
-- R^2-based masking and clipping of outliers
-- Chunked processing (low RAM)
 Outputs:
   Ki_map.nii.gz, VT_map.nii.gz, R2_patlak.nii.gz, R2_logan.nii.gz, valid_mask.nii.gz
 """
