@@ -1,10 +1,4 @@
 #!/usr/bin/env python3
-"""
-Fit a 1-Tissue compartment model to a TAC using an input function.
-- Uses Cp(t) if provided via --cp_csv (time_s,value); else uses IDIF proxy tac_idif.csv (demo).
-- Outputs: K1, k2, and a PNG plot of observed TAC vs fitted curve.
-NOTE: Demonstration only; for quantitative work provide proper arterial/IDIF Cp(t).
-"""
 import os, argparse
 import numpy as np
 import pandas as pd
@@ -15,7 +9,6 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 def one_tissue_model(Cp, t, K1, k2):
-    """Ct(t) = K1 * (Cp convolved with exp(-k2 * (t - tau))) using Riemann sums."""
     t = np.asarray(t, dtype=float)
     Cp = np.asarray(Cp, dtype=float)
     dt = float(np.mean(np.diff(t)))
