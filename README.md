@@ -129,3 +129,8 @@ results/figures_sim/ for PNGs
 results/report_sim.md for the markdown report
 ```
 
+# LICENSE
+
+#### Copyright (c) 2025 Nader Nemati
+#### Licensed under the MIT License. See the LICENSE file in the project root.
+
