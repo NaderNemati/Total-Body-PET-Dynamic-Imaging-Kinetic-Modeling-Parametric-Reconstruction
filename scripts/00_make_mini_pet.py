@@ -1,17 +1,9 @@
 #!/usr/bin/env python3
-"""
-Create a smaller PET dataset from a large 4D PET NIfTI + PET-BIDS JSON:
-- Temporal sub-sample (e.g., every 3rd frame)
-- Spatial down-sample (e.g., step=2 in x,y,z)
-- Optional center-crop to a target shape
-Outputs: mini NIfTI + updated JSON next to it.
-"""
 import os, json, argparse
 import numpy as np
 import nibabel as nib
 
 def center_crop3d(arr, target):
-    """Center crop a 3D/4D array spatially to target (tx,ty,tz)."""
     x,y,z = arr.shape[:3]
     tx,ty,tz = target
     sx = max((x - tx)//2, 0); ex = sx + min(tx, x)
